@@ -17,14 +17,14 @@
 // fibonnaci();
 
 
-let user = {
-    id: 0,
-    name: "mauro",
-    age: 33,
-    gender: "male",
-    dob: "11-12-1990",
-    hobbies: ['DnD', 'Gaming', 'Podcasts', 'Podcasts']
-}
+// let user = {
+//     id: 0,
+//     name: "mauro",
+//     age: 33,
+//     gender: "male",
+//     dob: "11-12-1990",
+//     hobbies: ['DnD', 'Gaming', 'Podcasts', 'Podcasts']
+// }
 
 // // console.log(user);
 
@@ -32,33 +32,39 @@ let user = {
 //     console.log(user[key]);
 // }
 
-class User {
+// class User {
 
-    #name;
-    #age;
+//     #name;
+//     #age;
 
-    constructor () {
-        this.#name = user.name;
-        this.#age = user.age;
-    }
+//     constructor () {
+//         this.#name = user.name;
+//         this.#age = user.age;
+//     }
 
-    getName () {
-        return this.#name;
-    }
+//     getName () {
+//         return this.#name;
+//     }
 
-    getAge () {
-        return this.age;
-    }
+//     getAge () {
+//         return this.age;
+//     }
 
-    set name(value) {
-        this.#name = value;
-    }
+//     set name(value) {
+//         this.#name = value;
+//     }
 
-    get name () {
-        return this.#name;
-    }
- }
+//     get name () {
+//         return this.#name;
+//     }
+//  }
 
-const user2 = new User(user);
-console.log(user2.name);
-console.log(user2.getName());
+// const user2 = new User(user);
+// console.log(user2.name);
+// console.log(user2.getName());
+
+import Car from "./Car.js";
+import Motorcycle from "./Motorcycle.js";
+
+const car = new Car();
+const motorcycle = new Motorcycle();
