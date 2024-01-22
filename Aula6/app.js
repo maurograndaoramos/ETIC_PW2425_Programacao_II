@@ -63,84 +63,141 @@
 // console.log(user2.name);
 // console.log(user2.getName());
 
-import Car from "./Car.js";
-import Motorcycle from "./Motorcycle.js";
+// import Car from "./Car.js";
+// import Motorcycle from "./Motorcycle.js";
 
-const data = {
+// const data = {
 
-    cars: [
-        {
-            brand: 'ferrari',
-            speed: 200,
-        },
-        {
-            brand: 'fiat',
-            speed: 50,
-        },
-        {
-            brand: 'tesla',
-            speed: 300,
-        },
-    ],
-    motorcycles: [
-        {
-            brand: 'ducati',
-            speed: 400,
-        },
-        {
-            brand: 'kawazaki',
-            speed: 500,
-        },
-        {
-            brand: 'harley',
-            speed: 300,
-        },
-    ],
-};
+//     cars: [
+//         {
+//             brand: 'ferrari',
+//             speed: 200,
+//         },
+//         {
+//             brand: 'fiat',
+//             speed: 50,
+//         },
+//         {
+//             brand: 'tesla',
+//             speed: 300,
+//         },
+//     ],
+//     motorcycles: [
+//         {
+//             brand: 'ducati',
+//             speed: 400,
+//         },
+//         {
+//             brand: 'kawazaki',
+//             speed: 500,
+//         },
+//         {
+//             brand: 'harley',
+//             speed: 300,
+//         },
+//     ],
+// };
 
-const vehicles = [];
+// const vehicles = [];
 
-window.onload = () => {
-    console.log("Window loaded");
-    const nav = document.querySelector("nav");
+// window.onload = () => {
+//     console.log("Window loaded");
+//     const nav = document.querySelector("nav");
 
-    const createUL = (name, data) => {
-        const ul = document.createElement("ul");
-        const title = document.createElement ("li");
+//     const createUL = (name, data) => {
+//         const ul = document.createElement("ul");
+//         const title = document.createElement ("li");
 
-        title.innerText = name;
-        ul.appendChild(title);
+//         title.innerText = name;
+//         ul.appendChild(title);
 
-        data.forEach((element, index) => {
-            const li = document.createElement ("li");
-            const button = document.createElement ("button");
-            button.onclick = (event) => {
-                switch (name) {
-                    case "cars":
-                        vehicles.push(new Car (element));
-                        break;
-                    case "motorcycles":
-                        vehicles.push(new Motorcycle (element));
-                        break;
+//         data.forEach((element, index) => {
+//             const li = document.createElement ("li");
+//             const button = document.createElement ("button");
+//             button.onclick = (event) => {
+//                 switch (name) {
+//                     case "cars":
+//                         vehicles.push(new Car (element));
+//                         break;
+//                     case "motorcycles":
+//                         vehicles.push(new Motorcycle (element));
+//                         break;
 
-                    default:
-                        break;
-                };
-                console.log(vehicles);
-            };
-            button.innerText = element.brand;
-            li.appendChild(button);
-            ul.appendChild(li);
-        });
+//                     default:
+//                         break;
+//                 };
+//                 console.log(vehicles);
+//             };
+//             button.innerText = element.brand;
+//             li.appendChild(button);
+//             ul.appendChild(li);
+//         });
 
-        nav.appendChild(ul);
-    };
+//         nav.appendChild(ul);
+//     };
 
-    for (const key in data) {
-        createUL(key, data[key]);
-    };   
-}
+//     for (const key in data) {
+//         createUL(key, data[key]);
+//     };   
+// };
 
 
 // const car = new Car();
 // const motorcycle = new Motorcycle();
+
+import Boat from "./Boat.js";
+import Car from "./Car.js";
+import Motorcycle from "./Motorcycle.js";
+
+const loadData = async (url) => {
+
+    const request = await fetch(url);
+    const result = await request.json();
+
+    return result;
+
+};
+
+const createLiContent = (item) => {
+
+    const button = document.createElement("button");
+    button.innerText = item.brand;
+
+    button.onclick = () => {
+        switch (item.type) {
+            case "car":
+                new Car(item);
+                break;
+            case "motorcycle":
+                new Motorcycle(item);
+                break;
+            case "boat":
+                new Boat(item);
+                break;
+        };
+    };
+
+    return button;
+}
+
+const createList = (data) => {
+
+    const ul = document.querySelector ("ul");
+
+    data.forEach(item => {
+        const li = document.createElement("li");
+        li.appendChild(createLiContent(item));
+        // li.style.color = "green"
+        // li.innerText = item.brand;
+        ul.appendChild(li);
+        // ul.innerHTML += "<li style=color:red>" + item.type + "</li>";
+    });
+};
+
+window.onload = async () => {
+
+    const data = await loadData("data.json");
+    data.sort ((a, b) => a.type.localeCompare(b.type));
+
+    const ul = createList (data);
+};
