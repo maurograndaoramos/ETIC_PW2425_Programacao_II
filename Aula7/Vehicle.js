@@ -5,15 +5,23 @@ export default class Vehicle {
     imagePath;
 
     #image;
+    #yPos = 0;
 
     constructor (data) {
         this.speed = data.speed;
         this.brand = data.brand;
         this.imagePath = data.image;
 
-        
+
     
         this.build();
+    }
+
+    animate() {
+        this.#yPos += 0.1;
+        console.log(this.#yPos);
+
+        this.#image.style.transform = `translateY(${this.#yPos}px)`;
     }
 
     build () {
