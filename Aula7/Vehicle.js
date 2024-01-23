@@ -4,6 +4,8 @@ export default class Vehicle {
     brand;
     imagePath;
 
+    #image;
+
     constructor (data) {
         this.speed = data.speed;
         this.brand = data.brand;
@@ -13,9 +15,14 @@ export default class Vehicle {
     }
 
     build () {
-        const img = document.createElement("img");
-        img.src = this.imagePath;
+        this.#image = document.createElement("img");
+        this.#image.src = this.imagePath;
 
-        document.body.appendChild(img);
+        document.body.appendChild(this.#image);
     }
-}S
+
+    destroy () {
+        document.body.removeChild(this.#image);
+
+    }
+}

@@ -165,20 +165,26 @@ const createLiContent = (item) => {
     const button = document.createElement("button");
     button.innerText = item.brand;
 
-    console.log(currentVehicle)
+    console.log(currentVehicle);
 
     button.onclick = () => {
+
+        if(currentVehicle) {
+            currentVehicle.destroy();
+        }
+
         switch (item.type) {
             case "car":
-                new Car(item);
+                currentVehicle = new Car(item);
                 break;
             case "motorcycle":
-                new Motorcycle(item);
+                currentVehicle = new Motorcycle(item);
                 break;
             case "boat":
-                new Boat(item);
+                currentVehicle = new Boat(item);
                 break;
         };
+        console.log(currentVehicle)
     };
 
     return button;
