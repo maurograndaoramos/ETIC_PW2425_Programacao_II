@@ -149,6 +149,8 @@ import Boat from "./Boat.js";
 import Car from "./Car.js";
 import Motorcycle from "./Motorcycle.js";
 
+let currentVehicle;
+
 const loadData = async (url) => {
 
     const request = await fetch(url);
@@ -162,6 +164,8 @@ const createLiContent = (item) => {
 
     const button = document.createElement("button");
     button.innerText = item.brand;
+
+    console.log(currentVehicle)
 
     button.onclick = () => {
         switch (item.type) {
