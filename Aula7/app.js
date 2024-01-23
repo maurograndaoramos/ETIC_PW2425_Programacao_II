@@ -165,8 +165,6 @@ const createLiContent = (item) => {
     const button = document.createElement("button");
     button.innerText = item.brand;
 
-    console.log(currentVehicle);
-
     button.onclick = () => {
 
         if(currentVehicle) {
@@ -184,7 +182,6 @@ const createLiContent = (item) => {
                 currentVehicle = new Boat(item);
                 break;
         };
-        console.log(currentVehicle)
     };
 
     return button;
@@ -197,17 +194,43 @@ const createList = (data) => {
     data.forEach(item => {
         const li = document.createElement("li");
         li.appendChild(createLiContent(item));
-        // li.style.color = "green"
-        // li.innerText = item.brand;
         ul.appendChild(li);
-        // ul.innerHTML += "<li style=color:red>" + item.type + "</li>";
     });
 };
 
-window.onload = async () => {
+// window.onload = async () => {
+
+//     const data = await loadData("data.json");
+//     data.sort ((a, b) => a.type.localeCompare(b.type));
+
+//     const ul = createList (data);
+
+// };
+
+window.addEventListener("load", async () => {
 
     const data = await loadData("data.json");
     data.sort ((a, b) => a.type.localeCompare(b.type));
 
     const ul = createList (data);
-};
+
+    let isPlaying = null;
+
+    const playButton = document.querySelector("#play_pause")
+
+
+    playButton.onclick = () => {
+
+        if(isPlaying) {
+            clearInterval(isPlaying);
+            isPlaying = null;
+            playButton.innerText = "Stop";
+            console.log("animation stopped")
+        } else {
+
+            isPlaying = setInterval (() => {
+                console.log("new animation frame")
+            }, 41);
+        }
+    }
+});

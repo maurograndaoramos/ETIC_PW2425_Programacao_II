@@ -10,6 +10,8 @@ export default class Vehicle {
         this.speed = data.speed;
         this.brand = data.brand;
         this.imagePath = data.image;
+
+        
     
         this.build();
     }
