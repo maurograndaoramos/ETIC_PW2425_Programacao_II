@@ -13,6 +13,9 @@ let a = parseInt(prompt("Qual o valor de variavel A"));
 let b = parseInt(prompt("Qual o valor de variavel B"));
 
 
+console.log("A", a);
+console.log("B", b);
+
 a = a + b;
 b = a - b;
 a = a - b;
@@ -21,6 +24,9 @@ a = a - b;
 console.log("A (antigamente B):", a);
 console.log("B (antigamente A):", b);
 
+// correção
+
+// [a, b] = [b, a]
 
     /**
      * -- Instruções Condicionais --
@@ -29,7 +35,7 @@ console.log("B (antigamente A):", b);
      * Faz console.log desse resultado.
      */
 
-isEven = () => {
+const isEven = () => {
     if (evenTestValue % 2 === 0) {
         console.log("Numero é par")
     } else if (! evenTestValue % 2 === 0) {
@@ -99,7 +105,10 @@ let pessoa = {
     genero : "M",
 }
 
-console.log(pessoa)
+console.log(pessoa.primeiroNome)
+console.log(pessoa.segundoNome)
+console.log(pessoa.idade)
+console.log(pessoa.genero)
 
     /**
      * -- Loops --
@@ -130,6 +139,12 @@ fibonacci();
      * Cria um evento onclick no botão que quando “clicado”, insere o texto “button clicked” no elemento <p>.
      */
 
+const button = document.querySelector("button");
+const p = document.querySelector("p");
+
+button.onclick = () => {
+    p.innerText = "button clicked"
+}
 
 
     /**
@@ -138,4 +153,13 @@ fibonacci();
      * e transforme o resultado desse fetch em formato json.
      * Faz console.log desse json.
      */
+const func = async () => {
+    const request = await fetch("data.json");
+    const result = await request.json();
+
+    console.log(result);
+}
+
+func();
+
 }
