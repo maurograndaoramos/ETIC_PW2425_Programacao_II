@@ -10,7 +10,7 @@
         "type": "bird",
         "name": "chicken",
         "canFly": false,
-        "sound": "https://cdn.pixabay.com/audio/2023/12/06/audio_41325eb66f.mp3",
+        "sound": "https://cdn.pixabay.com/audio/2023/10/28/audio_17cc2a9998.mp3",
         "image": "https://i.guim.co.uk/img/media/30646649ad38eca6e8ddd6108af6de13e43117a4/475_196_4518_3323/master/4518.jpg?width=465&dpr=1&s=none"
     },
     {
@@ -23,36 +23,36 @@
     {
         "type": "mammal",
         "name": "horse",
+        "sound": "https://cdn.pixabay.com/audio/2022/10/23/audio_b3ca30d553.mp3",
         "numLegs": 4,
-        "sound": "https://cdn.pixabay.com/audio/2022/03/19/audio_7c6469b51b.mp3",
         "image": "https://cdn.britannica.com/93/1293-050-B835357D/Morgan-stallion-bay-coat.jpg"
     },
     {
         "type": "mammal",
         "name": "human",
+        "sound": "https://cdn.pixabay.com/audio/2022/03/24/audio_7981bb957c.mp3",
         "numLegs": 2,
-        "sound": "https://cdn.pixabay.com/audio/2023/12/11/audio_1f84970aaa.mp3",
         "image": "https://www.kenhub.com/thumbor/4wdnjNQFtAGLgKEtBO2IgF2hF3Q=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/article/en/the-human-anatomy/PSXgfeg9rZtrnvNut7D8uQ_Human_anatomy.png"
     },
     {
         "type": "reptile",
         "name": "crocodile",
-        "isAgressive": true,
         "sound": "https://cdn.pixabay.com/audio/2022/03/10/audio_7547b2d1bd.mp3",
+        "isAgressive": true,
         "image": "https://c02.purpledshub.com/uploads/sites/62/2014/11/GettyImages-123529247-2a29d6c.jpg"
     },
     {
         "type": "reptile",
         "name": "gecko",
-        "isAgressive": false,
         "sound": "https://cdn.pixabay.com/audio/2022/03/10/audio_c89621fe2e.mp3",
+        "isAgressive": false,
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Eublepharis_macularius1.jpg/800px-Eublepharis_macularius1.jpg"
     },
     {
         "type": "mammal",
         "name": "whale",
         "numLegs": 0,
-        "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_7eccfc004e.mp3",
+        "sound": "https://cdn.pixabay.com/audio/2022/03/10/audio_60ff5b13f4.mp3",
         "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Southern_right_whale.jpg"
     }
 ]
