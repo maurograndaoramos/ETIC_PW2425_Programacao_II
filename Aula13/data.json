@@ -75,5 +75,19 @@
         "isFreshWater": true,
         "sound": "https://cdn.pixabay.com/audio/2022/01/18/audio_4bf02d9d82.mp3",
         "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Salmo_trutta.jpg"
+    },
+    {
+        "type": "insect",
+        "name": "mosquito",
+        "canFly": true,
+        "sound": "https://cdn.pixabay.com/audio/2021/09/12/audio_76301fd0ea.mp3",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Mosquito_2007-2.jpg"
+    },
+    {
+        "type": "insect",
+        "name": "ant",
+        "canFly": false,
+        "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_81c4bdf1ed.mp3",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Fire_ants_01.jpg"
     }
 ]

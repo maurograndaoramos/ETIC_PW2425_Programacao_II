@@ -2,6 +2,7 @@ import Bird from "./Bird.js";
 import Mammal from "./Mammal.js";
 import Reptile from "./Reptile.js";
 import Fish from "./Fish.js"
+import Insect from "./Insect.js"
 
 export default class Zoo {
 
@@ -16,6 +17,9 @@ export default class Zoo {
     addAnimal(animal) {
         let nextAnimal = null;
         switch (animal.type) {
+            case "insect":
+                nextAnimal = new Insect(animal, () => this.#performAnimal(nextAnimal));
+                break;
             case "fish":
                 nextAnimal = new Fish(animal, () => this.#performAnimal(nextAnimal));
                 break;
