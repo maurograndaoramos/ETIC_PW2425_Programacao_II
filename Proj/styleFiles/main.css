@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Gotham Book';
+    src: 
+        url('https://www.example.com/assets/fonts/Gotham-Book.eot'),
+        url('https://www.example.com/assets/fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+        url('https://www.example.com/assets/fonts/Gotham-Book.woff2') format('woff2'),
+        url('https://www.example.com/assets/fonts/Gotham-Book.woff') format('woff'),
+        url('https://www.example.com/assets/fonts/Gotham-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body, html {
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:stretch ;
+    background-color: #161039;
+    flex-direction: row;
+    overflow:initial
+}
+
+#prevButton {
+    z-index: 2;
+    font-size: xx-large;
+    margin: 0px 70px 0px 0px;
+    height: 100%;
+    width: 5%;
+    border: none;
+    color: whitesmoke;
+    background-color: #161039;
+}
+
+#nextButton {
+    z-index: 2;
+    font-size: xx-large;
+    margin: 0px 0px 0px 70px;
+    height: 100%;
+    width: 5%;
+    border: none;
+    color: whitesmoke;
+    background-color: #161039;
+}
+
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: auto;
+}
+
+.image-wrapper {
+    margin-top: 10%;
+    object-fit: contain;
+}
+
+.image-wrapper img {
+    max-height: 600px;
+    width: auto;
+    object-fit: contain;
+    border: 8px solid #49240a; 
+    border-radius: 0px;
+    box-shadow: 0 0 0 10px #7c3d11, 0 0 0 15px #49240a;
+}
+
+.label-wrapper {
+    background-color:rgb(0,0,0);
+    background-image:url(http://www.zingerbugimages.com/backgrounds/green_marble_background_seamless.jpg);
+    background-position:top left;
+    background-repeat:repeat;
+    background-attachment:fixed;
+    min-width: 50px;
+    min-height: 50px;
+    display:grid;
+    align-items: center;
+    
+}
+
+.label-wrapper .title {
+    font-family: 'GothamBook', Arial, Helvetica, sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    color: rgba(255, 214, 49, 0);
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
+    padding: 0 20px; 
+    max-width: 600px;
+}
+
+.description-wrapper .text {
+    font-family: 'GothamBook', Arial, Helvetica, sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: justify;
+    line-height: 135%;
+    font-size: 125%;
+    text-indent: 5%;
+    font-weight: 400;
+    color: whitesmoke;
+    margin:20px;
+    padding: 20px 20px; 
+    max-width: 600px;
+    background-color: #1d1645;
+    border-radius: 15px;
+}
+
+
+button {
+    margin: 20px 0;
+}
+
+.description-wrapper .play-stop {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.description-wrapper .play-stop:hover {
+    background-color: #0056b3; 
+}
+
+.hidden {
+    display: none;
+}
+  
+.visible {
+    display: flex;
+}
